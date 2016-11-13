@@ -1,0 +1,142 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <title>OWNER PAGE</title>
+   
+</head>
+
+<body>
+    <div class="container" ng-controller="AppCtrl">
+        <h1>{{cats}} {{events}} Registration Desk</h1>
+        <div class="col-sm-4">
+    <div class="alert  " id="def">
+              Enter Valid AarohanID
+          </div>
+    </div>
+    <div class="col-sm-4">
+<button type="button" class="btn btn-success">COUNT : {{count}}</button>
+        
+        </div>    
+        <div class="alert alert-danger " id="already">
+              <strong>Error!</strong> Entry Already Exists here
+          </div>
+          <div class="alert alert-danger " id="belong">
+                <strong>Error!</strong> Student Doesnt Belong to This Category!
+            </div>
+          <div class="alert alert-danger" id="nosuch">
+                <strong>Error!</strong> Error No Such Aarohan ID
+            </div>
+          <div class="alert alert-success" id="success">
+              Student Sucessfully Registered.
+          </div>
+          <div class="alert alert-success" id="dmes">
+              Student Sucessfully Removed.
+          </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Aarohan ID</th>
+                    <th>
+
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td><input value="ARHN" class="form-control" ng-model="contact.aarohanid"></td>
+                    <td><button class="btn btn-primary" ng-click="addContact()">Register</button></td>
+                    <td>
+
+                    </td>
+                </tr>
+                    <td>
+                      Search
+                    </td>
+                    <td><input  class="form-control" placeholder=" Search" ng-model="searcha"></td>
+
+                <tr ng-repeat="contact in contactlist | filter:{aarohanid: searcha}">
+                    <td>{{contact.aarohanid}}</td>
+                    <td>{{contact.names}}</td>
+                    <td>{{contact.school}}</td>
+                    <td>{{contact.category}}</td>
+                    <td><button class="btn btn-danger" ng-click="remove(contact)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+
+<script type="text/javascript">
+$('#def').show();
+$('#already').hide();
+$("#nosuch").hide();
+$("#success").hide();
+$("#belong").hide();
+$("#dmes").hide();
+
+  function added(){
+    $('#def').hide();
+    $('#already').hide();
+    $("#nosuch").hide();
+    $("#success").show();
+    $("#belong").hide();
+    $("#dmes").hide();
+
+  }
+
+  function belong(){
+    $('#def').hide();
+    $('#already').hide();
+    $("#nosuch").hide();
+    $("#success").hide();
+    $("#belong").show();
+    $("#dmes").hide();
+
+  }
+  function already(){
+    $('#def').hide();
+    $('#already').show();
+    $("#nosuch").hide();
+    $("#success").hide();
+    $("#belong").hide();
+    $("#dmes").hide();
+
+  }
+
+  function nosuch(){
+    $('#def').hide();
+    $('#already').hide();
+    $("#nosuch").show();
+    $("#success").hide();
+    $("#belong").hide();
+    $("#dmes").hide();
+
+  }
+  function delmes(){
+    $('#def').hide();
+    $('#already').hide();
+    $("#nosuch").hide();
+    $("#success").hide();
+    $("#belong").hide();
+    $("#dmes").show();
+
+  }
+
+</script>
+</body>
+
+</html>

@@ -16,18 +16,16 @@
 </script>
 </head>
 <body>
-
 	<div class="login-page">
 		<div class="form">
-			<form class="login-form" method="get" action="/dlogin">
-				<button type="submit" ><b>DOCTOR LOGIN<b> </button>
-				</form>
-				<br> <br>
-			<form class="login-form" method="get" action="/ologin">
-				<button type="submit"><b>USER LOGIN<b></button>
-				</form>
+		<p class="error">Error logging in!!</p>
 		</div>
 	</div>
 
+	<script type="text/javascript">
+		$('.message a').click(function(){
+			$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+		});
+	</script>
 </body>
 </html>

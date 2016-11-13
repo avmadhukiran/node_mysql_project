@@ -16,18 +16,27 @@
 </script>
 </head>
 <body>
-
 	<div class="login-page">
 		<div class="form">
-			<form class="login-form" method="get" action="/dlogin">
-				<button type="submit" ><b>DOCTOR LOGIN<b> </button>
+            
+    <h1>Hi Owner!! please sign in</h1>
+			<form class="register-form">
+				<input type="text" placeholder="name"/>
+				<input type="password" placeholder="password"/>
+				<input type="text" placeholder="email address"/>
 				</form>
-				<br> <br>
-			<form class="login-form" method="get" action="/ologin">
-				<button type="submit"><b>USER LOGIN<b></button>
+			<form class="login-form" method="post" action="/ologincheck">
+				<input type="text" placeholder="username" name="username" />
+				<input type="password" placeholder="password" name="password" />
+				<button type="submit">login</button>
 				</form>
 		</div>
 	</div>
 
+	<script type="text/javascript">
+		$('.message a').click(function(){
+			$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+		});
+	</script>
 </body>
 </html>
