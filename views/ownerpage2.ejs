@@ -15,35 +15,54 @@
 
 <body><script src="ejs.js"></script>
     <div class="container" ng-controller="AppCtrl">
-        <h1>Hi!!!!!! {{username}}</h1>
+        <h1>hi!! <%= username[0].owner_name %></h1>
+        <p><%= username[0].pet_name %></p>
+        <p><%= username[0].Address %></p>
+        <p><%= username[0].Age %></p>
+        <p><%= username[0].City %></p>
         <div class="col-sm-4">
     
     </div>
-       
+        
+        
+
         <table class="table">
-            <thead>
-                <tr>
-                    <th>Treated Patients</th>
-                </tr>
-            </thead>
+            
             <tbody>
+                <tr>
+                <td>OwnerName</td>
                 
-                <tr ng-repeat="contact in contactlist ">
+                <td>PetName</td>
+                
+                <td>DoctorName</td>
+                
+                <td>Reason</td>
+                </tr>
+                
+<!--
+                <tr ng-repeat="contact in contactlist | filter:{aarohanid: searcha}">
                     <td>{{contact.aarohanid}}</td>
                     <td>{{contact.names}}</td>
                     <td>{{contact.school}}</td>
                     <td>{{contact.category}}</td>
                     <td><button class="btn btn-danger" ng-click="remove(contact)">Remove</button></td>
                 </tr>
+-->
             </tbody>
         </table>
+        
+        <a href="/appointment?id=<%= username[0].owner_name %>" class="btn btn-success" >book an appointment</a>
+
     </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
     <script src="controllers/controller.js"></script>
     <script src="js/jquery-1.10.2.js"></script>
-
+<script>
+    var myvar = <%- JSON.stringify(username) %>;
+    console.log(myvar);
+    </script>
 </body>
 
 </html>

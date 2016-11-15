@@ -9,23 +9,16 @@
 <body>
 	<div class="login-page">
 		<div class="form">
-            
-    <h1>Hi Doctor!! please sign in</h1>
-			<form class="register-form" method="post" action="/createdoctor">
-				<input type="text" placeholder="doctorname" name="Doctorname"/>
-                
-                <input type="password" placeholder="password" name="password"/>
-                <input type="text" placeholder="Specialisation" name="spec"/>
-				<input type="text" placeholder="Experience" name="exp"/>
-                <input type="text" placeholder="address" name="address"/>
-                
-                <input type="text" placeholder="age" name="age"/>
-                
-                <input type="text" placeholder="city" name="city"/>
+            <h1>Success fully created!!!!</h1>
+    <h1>please sign in</h1>
+			<form class="register-form" method="post" action="/createowner">
+				<input type="text" placeholder="Owner Name" name="username"/>
+				<input type="password" placeholder="Password" name="password"/>
+				<input type="text" placeholder="Pet Name" name="pet"/>
                 
       <button type="submit">create</button>
 				</form>
-			<form class="login-form" method="get" action="/dlogincheck">
+			<form class="login-form" method="get" action="/ologincheck">
 				<input type="text" placeholder="username" name="username" />
 				<input type="password" placeholder="password" name="password" />
 				<button type="submit">login</button>

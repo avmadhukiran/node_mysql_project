@@ -1,0 +1,94 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <title>CLINIC</title>
+    
+</head>
+    
+
+<body><script src="ejs.js"></script>
+    <div class="container" ng-controller="AppCtrl">
+        <div class="col-sm-4">
+    
+    </div>
+        
+        
+<h1> Hi !!! <%=hello[1].username %></h1>
+   
+        <table class="table">
+            <tbody>
+                <tr>
+
+
+                <td>Availble Doctors</td>
+            
+                </tr>
+                <tr>
+                    
+   <td> DoctorName </td> 
+   <td> Specialisation   </td> 
+  
+   <td> Address </td> 
+   <td> Experience   </td> 
+   <td> Age </td> 
+                    <td> City </td> </tr>
+                
+                    <br>
+                    <br>
+  
+                <tr>
+                    <% for(var i=0; i<hello[0].doctors.length; i++) {%>
+   <td> <%= hello[0].doctors[i].dname_name %> </td> 
+   <td> <%= hello[0].doctors[i].Specialisation  %> </td> 
+  
+   <td> <%= hello[0].doctors[i].Address %> </td> 
+   <td> <%= hello[0].doctors[i].Experience  %> </td> 
+   <td> <%= hello[0].doctors[i].Age %> </td> 
+  <td> <%= hello[0].doctors[i].City %> </td> 
+  
+                    <% } %>
+                </tr>
+                <tr>
+  
+            </tbody>
+            
+        </table>
+        <br>
+            <br>
+        <form method="post" action="/appointment?id=<%=hello[1].username %>">
+             <td><input type="text" placeholder="Enter the doctor name" name="dname"> Enter the name of the doctor</input></td>
+    <br><br>
+     <td><input type="text" placeholder="Enter the Reason" name="reason"> Reason to visit doctor</input></td>
+<br><br>
+        <button class="btn btn-success" id="booked" type="submit">book an appointment</button>
+            </form>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+
+</body>
+    <script> 
+    $(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+
+    
+    </script>
+
+</html>

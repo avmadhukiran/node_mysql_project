@@ -4,32 +4,32 @@
 	<title>Login</title>
 	<link href="login.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-86869693-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    
 </head>
 <body>
 	<div class="login-page">
 		<div class="form">
             
     <h1>Hi Owner!! please sign in</h1>
-			<form class="register-form">
-				<input type="text" placeholder="name"/>
-				<input type="password" placeholder="password"/>
-				<input type="text" placeholder="email address"/>
+			<form class="register-form" method="post" action="/createowner">
+				<input type="text" placeholder="Owner Name" name="username"/>
+				<input type="password" placeholder="Password" name="password"/>
+				<input type="text" placeholder="Pet Name" name="pet"/>
+                <input type="text" placeholder="address" name="address"/>
+                
+                <input type="text" placeholder="age" name="age"/>
+                
+                <input type="text" placeholder="city" name="city"/>
+                
+      <button type="submit">create</button>
 				</form>
-			<form class="login-form" method="post" action="/ologincheck">
+			<form class="login-form" method="get" action="/ologincheck">
 				<input type="text" placeholder="username" name="username" />
 				<input type="password" placeholder="password" name="password" />
 				<button type="submit">login</button>
 				</form>
+            <br>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
 		</div>
 	</div>
 

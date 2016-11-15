@@ -1,0 +1,100 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <title>CLINIC</title>
+    
+</head>
+    
+
+<body><script src="ejs.js"></script>
+    <div class="container" ng-controller="AppCtrl">
+        <div class="col-sm-4">
+    
+    </div>
+        
+        
+<h1> Hi !!! <%=hello[1].username %></h1>
+   
+        <table class="table">
+            <tbody>
+                <tr>
+
+
+                <td>AppointmentList</td>
+            
+                </tr>
+                <tr>
+                    
+   <td> PatientName </td> 
+   <td> Pet Name   </td> 
+  
+   <td> Address </td> 
+   <td> Age </td> 
+                    <td> City </td>
+                <td> Reason </td></tr>
+                
+                    <br>
+                    <br>
+  <% for(var i=0; i<hello[0].doctors.length; i++) {%>
+                <tr>
+                    
+   <td> <%= hello[0].doctors[i].owner_name %> </td> 
+   <td> <%= hello[0].doctors[i].pet_name  %> </td> 
+  
+   <td> <%= hello[0].doctors[i].Address %> </td> 
+   <td> <%= hello[0].doctors[i].Age %> </td> 
+  <td> <%= hello[0].doctors[i].City %> </td>
+                    <td> <%= hello[0].doctors[i].reason %> </td>
+  
+                    
+                    
+                </tr>
+                <% } %>
+                <tr>
+  
+            </tbody>
+            
+        </table>
+        <br>
+            <br>
+        <form method="post" action="/treatment?id=<%=hello[1].username %>">
+             <td><input type="text" placeholder="Enter the patient name" name="oname"> Enter the name of the patient</input></td>
+    <br><br>
+<td><input type="text" placeholder="Enter the Reason" name="reason"> Actual reason</input></td>
+     
+
+<br><br>
+<td><input type="text" placeholder="Enter the Prescription" name="pres"> Prescribed medicine</input></td>
+<br><br>
+        <button class="btn btn-success" id="booked" type="submit">Complete Treatment</button>
+            </form>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
+
+</body>
+    <script> 
+    $(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+
+    
+    </script>
+
+</html>
