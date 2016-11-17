@@ -15,30 +15,53 @@
 
 <body><script src="ejs.js"></script>
     <div class="container" ng-controller="AppCtrl">
-        <div class="col-sm-4">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     
-    </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              <a class="navbar-brand" href="#"><img src="img/1.jpg" height=30 width=41></a>    
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                
+                <ul class="nav navbar-nav">
+                
+        <h1 style="color:white;">Hi!!  <%=hello[1].username %></h1>   
+                    
+                      </ul>
+                    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost:3000"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+            </div>
+         
         
+    </nav>    
         
-<h1> Hi !!! <%=hello[1].username %></h1>
-   
+   <br>
+        <br>
+        <br>
+        <br>
         <table class="table">
             <tbody>
                 <tr>
 
 
-                <td>AppointmentList</td>
+                <td><strong>AppointmentList</strong></td>
             
                 </tr>
                 <tr>
                     
-   <td> PatientName </td> 
-   <td> Pet Name   </td> 
+                    <td><strong> PatientName </strong></td> 
+                    <td> <strong>Pet Name  </strong> </td> 
   
-   <td> Address </td> 
-   <td> Age </td> 
-                    <td> City </td>
-                <td> Reason </td></tr>
+                    <td> <strong>Address</strong> </td> 
+                    <td> <strong>Age</strong> </td> 
+                    <td> <strong>City </strong></td>
+                    <td> <strong>Reason </strong></td></tr>
                 
                     <br>
                     <br>

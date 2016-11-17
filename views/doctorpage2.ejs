@@ -14,13 +14,41 @@
     
 
 <body><script src="ejs.js"></script>
-    <div class="container" ng-controller="AppCtrl">
-        <h1>hi!! <%= username[0].dname_name %></h1>
-        <h2><%= username[0].Specialisation  %></h2>
-        <p><%= username[0].Experience  %></p>
-        <p><%= username[0].Address %></p>
-        <p><%= username[0].Age %></p>
-        <p><%= username[0].City %></p>
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        
+        <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+              <a class="navbar-brand" href="#"><img src="img/1.jpg" height=30 width=41></a>    
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                
+                <ul class="nav navbar-nav">
+                
+        <h1 style="color:white;">
+        hi!! <%= username[0].dname_name %></h1>   
+                    
+                      </ul>
+                    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://localhost:3000"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+            </div>
+         
+        
+    </nav>  
+        <br>
+        <br>
+        <br>
+        <br>
+        <p><strong>Specialisation</strong>:<%= username[0].Specialisation  %></p>
+        <p><strong>Experience</strong>:<%= username[0].Experience  %></p>
+        <p><strong>Address</strong>:<%= username[0].Address %></p>
+        <p><strong>Age</strong>:<%= username[0].Age %></p>
+        <p><strong>City</strong>:<%= username[0].City %></p>
         
         
         
@@ -29,20 +57,20 @@
             
             <tbody>
                 <tr>
-                <td>PatientName</td>
+                    <td><strong>PatientName</strong></td>
                 
-                <td>PetName</td>
+                    <td><strong>PetName</strong></td>
                 
-                <td>DoctorName</td>
                 
-                <td>Reason</td>
+                    <td><strong>Reason</strong></td>
                 
-                <td>prescription</td>
+                    <td><strong>prescription</strong></td>
                 </tr>
-                
             </tbody>
-        </table>
-        
+    </table>
+    <br>
+    <br>
+    <br>
         <a href="/seeappointments?id=<%= username[0].dname_name %>" class="btn btn-success" >See all the appointment</a>
 
     </div>
