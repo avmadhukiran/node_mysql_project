@@ -1,0 +1,56 @@
+CREATE TABLE owner
+(
+OID Integer PRIMARY KEY AUTO_INCREMENT,
+owner_name varchar(255) NOT NULL,
+pet_name varchar(255) NOT NULL,
+Address varchar(255),
+City varchar(255),
+Age varchar(5)
+);
+CREATE TABLE doctor
+(
+dID Integer PRIMARY KEY AUTO_INCREMENT,
+dname_name varchar(255) NOT NULL,
+Specialisation varchar(255) ,
+Experience varchar(255),
+Address varchar(255),
+City varchar(255),
+Age varchar(5)
+);
+CREATE Table appoinment
+(
+OID integer,
+dID integer,
+reason varchar(255),
+FOREIGN KEY (OID) REFERENCES owner(OID),
+
+FOREIGN KEY (dID) REFERENCES doctor(dID)
+);
+
+
+    -> values ("1","madhu","heart","5","sadas","city","as" )
+CREATE Table treated
+(
+OID integer,
+dID integer,
+reason varchar(255),
+
+prescription varchar(100),
+FOREIGN KEY (OID) REFERENCES owner(OID),
+
+FOREIGN KEY (dID) REFERENCES doctor(dID)
+
+)
+CREATE Table ownerreg
+(
+oname varchar(15),
+password varchar(15)
+
+);
+CREATE Table doctorreg
+(
+oname varchar(15),
+password varchar(15)
+
+);
+
